@@ -9,7 +9,7 @@
                     <h3>{{ article.title }}</h3>
                     <p><small class="text-muted">{{ article.publishedAt | date}}</small></p>
                     <hr>
-                    <p *ngIf="article.content">{{ article.content }}</p><a href="{{ article.url }}"><small>Read the full story</small></a>
+                    <p *ngIf="article.content">{{ article.content }}</p><a href="{{ article.url }}" target="_blank"><small>Read the full story</small></a>
                     <p *ngIf="!article.content">{{ article.description }}</p>
                 </div>
             </div>

@@ -13,8 +13,8 @@ router.get('/', (req, res, next) => {
             var content = JSON.stringify(response.articles[x].content);
             for(y = content.length; y > 0; y--) {
                 if(content.charAt(y)=== '[') {
-                    var ret = content.replace(content.substring(y, content.length), '');
-                    response.articles[x].content = ret;
+                    //var ret = content.replace(content.substring(y, content.length), '');
+                    response.articles[x].content = content.replace(content.substring(y, content.length), '');
                 }
             }
         }
