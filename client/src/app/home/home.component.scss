@@ -1,22 +1,7 @@
-// .topStoryText {
-//     position: relative;
-//     //left: 50%;
-//     //transform: translateX((-50%));
-// }
 
-// .topStoryImg {
-//     width: 100vw;
-//     height: 50vh;
-//     object-fit: none;
-//     object-position: 50% 50%;
-//     overflow: hidden;
-//     margin-left: auto;
-//     margin-right: auto;
-//     left: 25vw;
-//     //transform: translate((-75%));
-// }
-
-.col-centered{
-    float: none;
-    margin: 0 auto;
+.article-image {
+    margin: auto;
+    display: block;
+    height: auto;
+    width: auto;
 }

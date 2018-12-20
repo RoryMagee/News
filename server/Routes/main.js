@@ -8,6 +8,16 @@ router.get('/', (req, res, next) => {
     newsapi.v2.topHeadlines({
         country: 'gb'
     }).then(response => {
+        let articleAmnt = Object.keys(response.articles).length;
+        for(x = 0; x < articleAmnt; x++) {
+            var content = JSON.stringify(response.articles[x].content);
+            for(y = content.length; y > 0; y--) {
+                if(content.charAt(y)=== '[') {
+                    var ret = content.replace(content.substring(y, content.length), '');
+                    response.articles[x].content = ret;
+                }
+            }
+        }
         res.json({
             response: response
         });
@@ -19,6 +29,22 @@ router.get('/business', (req, res, next) => {
         category: 'business',
         country: 'gb'
     }).then(response => {
+        let articleAmnt = Object.keys(response.articles).length;
+        for(x = 0; x < articleAmnt; x++) {
+            var content = JSON.stringify(response.articles[x].content);
+            for(y = content.length; y > 0; y--) {
+                if(content.charAt(y)=== '[') {
+                    var ret = content.replace(content.substring(y, content.length), '');
+                    response.articles[x].content = ret;
+                }
+            }
+        }
+        for(let x = 0; x < 20; x++) {
+            if(response.articles[x].source.id === 'null') {
+                console.log("null source");
+                delete response.articles[x];
+            }
+        }
         res.json({
             response: response
         });
@@ -30,6 +56,16 @@ router.get('/entertainment', (req, res, next) => {
         category: 'entertainment',
         country: 'gb'
     }).then(response => {
+        let articleAmnt = Object.keys(response.articles).length;
+        for(x = 0; x < articleAmnt; x++) {
+            var content = JSON.stringify(response.articles[x].content);
+            for(y = content.length; y > 0; y--) {
+                if(content.charAt(y)=== '[') {
+                    var ret = content.replace(content.substring(y, content.length), '');
+                    response.articles[x].content = ret;
+                }
+            }
+        }
         res.json({
             response: response
         });
@@ -41,6 +77,16 @@ router.get('/sport', (req, res, next) => {
         category: 'sport',
         country: 'gb'
     }).then(response => {
+        let articleAmnt = Object.keys(response.articles).length;
+        for(x = 0; x < articleAmnt; x++) {
+            var content = JSON.stringify(response.articles[x].content);
+            for(y = content.length; y > 0; y--) {
+                if(content.charAt(y)=== '[') {
+                    var ret = content.replace(content.substring(y, content.length), '');
+                    response.articles[x].content = ret;
+                }
+            }
+        }
         res.json({
             response: response
         });
@@ -52,6 +98,16 @@ router.get('/politics', (req, res, next) => {
         category: 'politics',
         country: 'gb'
     }).then(response => {
+        let articleAmnt = Object.keys(response.articles).length;
+        for(x = 0; x < articleAmnt; x++) {
+            var content = JSON.stringify(response.articles[x].content);
+            for(y = content.length; y > 0; y--) {
+                if(content.charAt(y)=== '[') {
+                    var ret = content.replace(content.substring(y, content.length), '');
+                    response.articles[x].content = ret;
+                }
+            }
+        }
         res.json({
             response: response
         });
@@ -63,6 +119,16 @@ router.get('/science', (req, res, next) => {
         category: 'science',
         country: 'gb'
     }).then(response => {
+        let articleAmnt = Object.keys(response.articles).length;
+        for(x = 0; x < articleAmnt; x++) {
+            var content = JSON.stringify(response.articles[x].content);
+            for(y = content.length; y > 0; y--) {
+                if(content.charAt(y)=== '[') {
+                    var ret = content.replace(content.substring(y, content.length), '');
+                    response.articles[x].content = ret;
+                }
+            }
+        }
         res.json({
             response: response
         });
