@@ -1,10 +1,39 @@
+<!-- <section id="home">
+    <div class="container p-1">
+        <div class="row mt-1">
+            <div class="col-lg-6">
+                <img class="img-fluid" src="{{ mainArticle.urlToImage }}" alt="img">
+            </div>
+            <div class="col-lg-6">
+                <h3>{{ mainArticle.title }}</h3>
+                <p><small class="text-muted">{{ mainArticle.publishedAt | date}}</small></p>
+                <hr>
+                <p>{{ mainArticle.content }}</p>
+            </div>
+        </div>
+        <hr>
+        <div class="conatiner p-1">
+        
+        </div>
+    </div>
+</section> -->
+
 <section id="home">
-    <div class="container-fluid d-non d-md-block">
-        <div class="col-md-6 item">
-            <img class="mainImg" src="{{ mainArticle.urlToImage }}" alt="img">
+    <div class="container p-1">
+        <div *ngFor="let article of articles">
+            <div class="row mt-5">
+                <div class="col-lg-6">
+                    <img class="img-fluid" src="{{ article.urlToImage }}" alt="img">
+                </div>
+                <div class="col-lg-6">
+                    <h3>{{ article.title }}</h3>
+                    <p><small class="text-muted">{{ article.publishedAt | date}}</small></p>
+                    <hr>
+                    <p>{{ article.content }}</p>
+                </div>
+            </div>
+            <hr>
         </div>
-        <div class="col-md-6 item">
-            <h3>{{ mainArticle.title }}</h3>
-        </div>
+        <hr>
     </div>
 </section>

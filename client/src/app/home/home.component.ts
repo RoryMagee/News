@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
 
   async ngOnInit() {
     try {
-      const data = await this.rest.get(environment.url + '/api/science');
+      const data = await this.rest.get(environment.url + '/api/business');
       data['response']['status'] ? this.articles = data['response']['articles'] : console.log("Data not OK");
       this.mainArticle = this.articles.pop();
       // for(var x = 0; x < 5; x++) {
