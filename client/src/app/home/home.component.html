@@ -3,13 +3,13 @@
         <div *ngFor="let article of articles">
             <div class="row mt-5">
                 <div class="col-lg-6">
-                    <img class="article-image img-fluid" src="{{ article.urlToImage }}" alt="img">
+                    <a href="{{ article.url }}" target="_blank"><img class="article-image img-fluid" src="{{ article.urlToImage }}" alt="img"></a>
                 </div>
                 <div class="col-lg-6">
                     <h3>{{ article.title }}</h3>
-                    <p><small class="text-muted">{{ article.publishedAt | date}}</small></p>
+                    <p><small class="text-muted">{{ article.publishedAt | date:'short'}}</small></p>
                     <hr>
-                    <p *ngIf="article.content">{{ article.content }}</p><a href="{{ article.url }}" target="_blank"><small>Read the full story</small></a>
+                    <p *ngIf="article.content">{{ article.content }}</p><a href="{{ article.url }}" target="_blank"><small>{{ article.source.name }}: Read the full story</small></a>
                     <p *ngIf="!article.content">{{ article.description }}</p>
                 </div>
             </div>

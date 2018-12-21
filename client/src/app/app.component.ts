@@ -9,7 +9,12 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'client';
   searchTerm= '';
+  category: any = '';
 
+  ngOnInit() {
+    console.log(this.category);
+  }
+  
   search() {
 
   }
