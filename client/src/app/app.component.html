@@ -1,48 +1,5 @@
-<nav class="navbar navbar-expand-md navbar-light navbar-fixed-top" style="background-color: white;">
-    <div class="container-fluid">
-      <a routerLink="/" class="navbar-brand">
-        <h1 class="">News</h1>
-      </a>
-      <div class="w-100">
-        <ul class="navbar-nav">
-          <hr>
-          <li class="navbar-item">
-            <a routerLink="" routerLinkActive="active" class="nav-link">Entertainment</a>
-          </li>
-          <hr>
-          <li class="navbar-item">
-            <a routerLink="/sport" routerLinkActive="active" class="nav-link">Sport</a>
-          </li>
-          <hr>
-          <li class="navbar-item">
-            <a routerLink="/politics" routerLinkActive="active" class="nav-link">Politics</a>
-          </li>
-          <hr>
-          <li class="navbar-item">
-            <a routerLink="/science" routerLinkActive="active" class="nav-link">Science</a>
-          </li>
-          <hr>
-          <li class="navbar-item">
-            <a routerLink="/business" routerLinkActive="active" class="nav-link">Business</a>
-          </li>
-          <hr>
-          <div class="input-group w-25 searchButton">
-              <input placeholder="Search" type="text" class="form-control" name="search" [(ngModel)]="searchTerm" (keyup.enter)="search()">
-              <button id="searchIcon">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </button>
-            </div>
-        </ul>
-      </div>   
-    </div>
-</nav>
+<app-navigation></app-navigation>
 
 <app-home></app-home>
 
-<footer id="main-footer" class="bg-main text-white mt-5 p-5">
-  <div class="container">
-    <p class="lead text-center">
-      <a href="https://newsapi.org/">Powered by NewsAPI</a>
-    </p>
-  </div>
-</footer>
+<app-footer></app-footer>

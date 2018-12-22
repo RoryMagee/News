@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { RestApiService } from '../rest-api.service';
 import { environment } from '../../environments/environment'
+import { CategoryService } from '../category.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,24 +9,13 @@ import { environment } from '../../environments/environment'
 })
 export class HomeComponent implements OnInit {
   articles: any[] = [];
-  category: any = '';
-  constructor(private rest: RestApiService) { }
+  constructor(private rest: RestApiService, private category: CategoryService) { }
 
   async ngOnInit() {
-    this.getArticles(this.category);
+    await this.category.getArticles();
+    this.articles = this.category.getList();
+    this.category.currentData.subscribe(category => this.articles = category);
   }
+  
 
-  async getArticles(category: any) {
-    try {
-      if (this.category) {
-        const data = await this.rest.get(environment.url + '/api/' + this.category);
-        data['response']['status'] ? this.articles = data['response']['articles'] : console.log("Data not OK");
-      } else {
-        const data = await this.rest.get(environment.url + '/api/');
-        data['response']['status'] ? this.articles = data['response']['articles'] : console.log("Data not OK");
-      }      
-    } catch(error) {
-      console.log("error connecting to server");
-    }
-  }
 }

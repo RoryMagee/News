@@ -6,21 +6,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { EntertainmentComponent } from './entertainment/entertainment.component';
-import { SportComponent } from './sport/sport.component';
-import { PoliticsComponent } from './politics/politics.component';
-import { ScienceComponent } from './science/science.component';
-import { BusinessComponent } from './business/business.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    EntertainmentComponent,
-    SportComponent,
-    PoliticsComponent,
-    ScienceComponent,
-    BusinessComponent
+    NavigationComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
