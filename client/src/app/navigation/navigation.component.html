@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-md navbar-light navbar-fixed-top" style="background-color: white;">
+  <div class="container-fluid">
+    <a routerLink="/" class="navbar-brand" (click)="updateCategory('')">
+      <h1 class="">News</h1>
+    </a>
+    <div class="w-100">
+      <ul class="navbar-nav">
+        <hr>
+        <li class="navbar-item">
+          <a routerLink="" routerLinkActive="active" class="nav-link" (click)="updateCategory('entertainment')">Entertainment</a>
+        </li>
+        <hr>
+        <li class="navbar-item">
+          <a routerLink="/sport" routerLinkActive="active" class="nav-link" (click)="updateCategory('sport')">Sport</a>
+        </li>
+        <hr>
+        <li class="navbar-item">
+          <a routerLink="/politics" routerLinkActive="active" class="nav-link" (click)="updateCategory('politics')">Politics</a>
+        </li>
+        <hr>
+        <li class="navbar-item">
+          <a routerLink="/science" routerLinkActive="active" class="nav-link" (click)="updateCategory('science')">Science</a>
+        </li>
+        <hr>
+        <li class="navbar-item">
+          <a routerLink="/business" routerLinkActive="active" class="nav-link" (click)="updateCategory('business')">Business</a>
+        </li>
+        <hr>
+        <div class="input-group w-25 searchButton">
+            <input placeholder="Search" type="text" class="form-control" name="search" [(ngModel)]="searchTerm" (keyup.enter)="search()">
+            <button id="searchIcon">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </div>
+      </ul>
+    </div>   
+  </div>
+</nav>
+
