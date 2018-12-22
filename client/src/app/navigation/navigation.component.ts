@@ -11,7 +11,7 @@ export class NavigationComponent implements OnInit {
   constructor(private category: CategoryService) { }
 
   async ngOnInit() {
-    this.category.currentData.subscribe(category => this.articles = category);
+    //this.category.currentData.subscribe(category => this.articles = category);
   }
 
   updateCategory(cat: string) {

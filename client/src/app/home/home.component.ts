@@ -12,8 +12,8 @@ export class HomeComponent implements OnInit {
   constructor(private rest: RestApiService, private category: CategoryService) { }
 
   async ngOnInit() {
-    await this.category.getArticles();
-    this.articles = this.category.getList();
+    this.articles = await this.category.getArticles();
+    //this.articles = this.category.getList();
     this.category.currentData.subscribe(category => this.articles = category);
   }
   

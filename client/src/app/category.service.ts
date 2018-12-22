@@ -32,11 +32,11 @@ export class CategoryService {
         console.log(this.getCategory())
         const data = await this.rest.get(environment.url + '/api/' + this.getCategory());
         data['response']['status'] ? this.articles.next(data['response']['articles']) : console.log("Data not OK");
-        console.log(this.getList());
+        return this.articles.value;
       } else {
         const data = await this.rest.get(environment.url + '/api/');
         data['response']['status'] ? this.articles.next(data['response']['articles']) : console.log("Data not OK");
-        console.log(this.getList());
+        return this.articles.value;
       } 
     } catch(error) {
       console.log(error);
