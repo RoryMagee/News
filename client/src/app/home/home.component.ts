@@ -8,7 +8,7 @@ import { CategoryService } from '../category.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  articles: any[] = [];
+  articles: any;
   constructor(private rest: RestApiService, private category: CategoryService) { }
 
   async ngOnInit() {
