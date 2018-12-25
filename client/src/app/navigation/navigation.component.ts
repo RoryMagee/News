@@ -8,14 +8,19 @@ import { CategoryService } from '../category.service';
 })
 export class NavigationComponent implements OnInit {
   articles: any[] = [];
+  searchTerm: string = '';
   constructor(private category: CategoryService) { }
 
   async ngOnInit() {
-    //this.category.currentData.subscribe(category => this.articles = category);
+    this.category.currentData.subscribe(category => this.articles = category);
   }
 
   updateCategory(cat: string) {
     this.category.setCategory(cat);
+  }
+
+  search() {
+    this.category.search(this.searchTerm);
   }
 
 }

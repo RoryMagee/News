@@ -32,13 +32,28 @@ export class CategoryService {
         console.log(this.getCategory())
         const data = await this.rest.get(environment.url + '/api/' + this.getCategory());
         data['response']['status'] ? this.articles.next(data['response']['articles']) : console.log("Data not OK");
-        return this.articles.value;
+        console.log(this.articles.value);
+        return this.articles;
       } else {
         const data = await this.rest.get(environment.url + '/api/');
         data['response']['status'] ? this.articles.next(data['response']['articles']) : console.log("Data not OK");
-        return this.articles.value;
+        console.log(this.articles.value);
+        return this.articles;
       } 
     } catch(error) {
+      console.log(error);
+    }
+  }
+
+  async search(q: string) {
+    try {
+      console.log(q);
+      console.log(environment.url + '/api/search/' + encodeURIComponent(q));
+      const data = await this.rest.get(environment.url + '/api/search/' + encodeURIComponent(q));
+      data['response']['status'] ? this.articles.next(data['response']['articles']) : console.log("Data not OK");
+      console.log(this.articles.value);
+      return this.articles.value;
+    } catch (error) {
       console.log(error);
     }
   }
