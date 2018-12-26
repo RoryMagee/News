@@ -8,7 +8,7 @@ const config = require('./config.js');
 
 const app = express();
 
-//app.use(express.static('dist/client'));
+app.use(express.static('dist/client'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(morgan('dev'));
