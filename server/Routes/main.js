@@ -9,8 +9,13 @@ router.get('/', (req, res, next) => {
     newsapi.v2.topHeadlines({
         country: 'gb'
     }).then(response => {
-        let articleAmnt = Object.keys(response.articles).length;
-        for(x = 0; x < articleAmnt; x++) {
+        //let articleAmnt = Object.keys(response.articles).length;
+        //for(x = 0; x < articleAmnt; x++) {
+        for(x = 0; x < response.articles.length; x++) {
+            if(!response.articles[x].urlToImage) {
+                response.articles.splice(x,1);
+                console.log('image deleted');
+            }
             var content = JSON.stringify(response.articles[x].content);
             content = content.replace(content.substring(0,1), '');
             for(y = content.length; y > 0; y--) {
@@ -31,8 +36,11 @@ router.get('/search/:q', (req, res, next) => {
         q: decodeURIComponent(req.params.q),
         sortBy: 'relevancy'
     }).then(response => {
-        let articleAmnt = Object.keys(response.articles).length;
-        for(x = 0; x < articleAmnt; x++) {
+        for(x = 0; x < response.articles.length; x++) {
+            if(!response.articles[x].urlToImage) {
+                response.articles.splice(x,1);
+                console.log('image deleted');
+            }
             var content = JSON.stringify(response.articles[x].content);
             content = content.replace(content.substring(0,1), '');
             for(y = content.length; y > 0; y--) {
@@ -53,8 +61,11 @@ router.get('/:category', (req, res, next) => {
         category: req.params.category,
         country: 'gb'
     }).then(response => {
-        let articleAmnt = Object.keys(response.articles).length;
-        for(x = 0; x < articleAmnt; x++) {
+        for(x = 0; x < response.articles.length; x++) {
+            if(!response.articles[x].urlToImage) {
+                response.articles.splice(x,1);
+                console.log('image deleted');
+            }
             var content = JSON.stringify(response.articles[x].content);
             content = content.replace(content.substring(0, 1), '');
             for(y = content.length; y > 0; y--) {

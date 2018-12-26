@@ -1,4 +1,4 @@
 export const environment = {
-  production: false,
-  url: 'http://localhost:8080'
+  production: true,
+  url: 'http://news-server.eu-west-1.elasticbeanstalk.com'
 };

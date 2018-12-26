@@ -1,10 +1,12 @@
 <section id="home">
     <div class="container p-1">
         <div *ngIf="articles.length == 0">
-            <p>no articles</p>
+            <h1 class="text-center display-3 mt-5 animated slideInUp fast">
+                No Articles
+            </h1>
         </div>
         <div *ngIf="articles.length > 0">
-            <div class="animated slideInUp" *ngFor="let article of articles">
+            <div class="article animated slideInUp fast" *ngFor="let article of articles">
                 <div class="row mt-5">
                     <div class="col-lg-6">
                         <a href="{{ article.url }}" target="_blank"><img class="article-image img-fluid" src="{{ article.urlToImage }}"
