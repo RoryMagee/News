@@ -1,0 +1,15 @@
+@keyframes test {
+    0%   {background-color: white;}
+  100% {background-color: lightgrey;}
+}
+
+.active {
+    background-color: lightgrey;
+    animation-name: test;
+    animation-duration: 2s;
+    border-radius: 25px;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+}

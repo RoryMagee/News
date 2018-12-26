@@ -19,6 +19,14 @@ export class NavigationComponent implements OnInit {
     this.category.setCategory(cat);
   }
 
+  categoryEquals(cat: string) {
+    if (cat === this.category.getCategory())  {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   search() {
     this.category.search(this.searchTerm);
   }
