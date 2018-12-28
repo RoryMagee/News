@@ -29,9 +29,11 @@
           <hr>
         <div class="input-group w-25 searchButton">
             <input placeholder="Search" type="text" class="form-control" name="search" [(ngModel)]="searchTerm" (keyup.enter)="search()">
-            <button id="searchIcon">
-              <i class="fa fa-search" aria-hidden="true" (click)="search()"></i>
-            </button>
+            <span class="input-group-btn">
+              <button class="btn btn-default" id="searchIcon">
+                <i class="fa fa-search" (click)="search()"></i>
+              </button>
+            </span>
           </div>
       </ul>
     </div>   
