@@ -31,8 +31,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/search/:q', (req, res, next) => {
-    newsapi.v2.topHeadlines({
-        country: 'gb',
+    newsapi.v2.everything({
         q: decodeURIComponent(req.params.q),
         sortBy: 'relevancy'
     }).then(response => {
